@@ -1,0 +1,61 @@
+Key Kafka commands
+-----------------------------------------------------------------------------------------------------------------------
+
+1. Create topics
+-----------------------------------------------------------
+bin/kafka-topics.sh --bootstrap-server <URL> --create --replication-factor 3 --partitions 4 --topic topic-name
+
+2. List all topics
+-----------------------------------------------------------
+bin/kafka-topics.sh --bootstrap-server <URL> --list
+
+3. Add a topic partition
+-----------------------------------------------------------
+bin/kafka-topics.sh --bootstrap-server <URL> --alter --topic <topic-name> --partitions 16
+
+4. Run a producer
+-----------------------------------------------------------
+bin/kafka-console-producer.sh --topic <topic-name> --broker-list <URL>
+
+5. Run a consumer
+-----------------------------------------------------------
+bin/kafka-console-consumer.sh --bootstrap-server <URL> --topic <topic-name>
+
+6. Consume messages from the beginning
+-----------------------------------------------------------
+bin/kafka-console-consumer.sh --topic <topic-name> --bootstrap-server <URL> --group <group-name>--from-beginning
+
+7. Get information on a specific consumer group
+-----------------------------------------------------------
+bin/kafka-consumer-groups.sh --bootstrap-server <URL> --describe --group <group-name>
+
+8. Delete a consumer group
+-----------------------------------------------------------
+/bin/kafka-consumer-groups.sh --bootstrap-server <URL> --delete --group my-group --group <group-name>
+
+9. Reset the offset of a topic
+-----------------------------------------------------------
+
+10. Describing topics
+-----------------------------------------------------------
+bin/kafka-topics.sh --describe --bootstrap-server <URL> --topic topic-name
+
+11. Changing the retention period for a topic
+-----------------------------------------------------------
+bin/kafka-topics.sh --bootstrap-server URL --alter --topic topic-name config retention.ms=360000*
+
+12. Deleting a Kafka topic
+-----------------------------------------------------------
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic topic-name
+
+13. Publishing events to a topic
+-----------------------------------------------------------
+bin/kafka-console-producer.sh --topic topic-name --bootstrap-server URL
+
+
+
+
+
+
+
+

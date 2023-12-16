@@ -1,0 +1,97 @@
+What do we understand about SNMP
+-----------------------------------------------------------------------------------------------------------------------
+SNMP, or Simple Network Management Protocol, is a protocol used in network management systems to monitor and manage 
+network-attached devices. 
+
+It is an essential tool for network administrators and IT professionals to maintain and troubleshoot networks efficiently. 
+SNMP allows you to collect information and perform various operations on network devices, such as routers, switches, 
+servers, and printers.
+
+Here's a basic overview of SNMP:
+-----------------------------------------------------------------------------------------------------------------------
+
+Components of SNMP:
+-----------------------------------------------------------
+SNMP consists of three key components:
+-----------------------------
+1. Managed Devices: These are the network devices you want to monitor or manage, like routers, switches, servers, and printers.
+
+2. SNMP Agents: These are software modules or processes running on managed devices. Agents collect and store management information
+   and make it available to SNMP managers.
+
+3. SNMP Managers: These are the systems or applications responsible for monitoring and managing network devices. Managers send 
+   SNMP requests to agents to retrieve information and configure devices.
+
+SNMP Versions:
+-----------------------------
+There are several versions of SNMP, with SNMPv1, SNMPv2c, and SNMPv3 being the most commonly used. SNMPv3 is the most secure 
+and feature-rich version, while SNMPv1 and SNMPv2c are less secure and lack some of the advanced features.
+
+MIB (Management Information Base):
+-----------------------------
+The MIB is a database that describes the managed objects in a device. It defines a structure for organizing and accessing information. 
+MIB objects are represented hierarchically and are identified by Object Identifiers (OIDs).
+
+SNMP Operations:
+-----------------------------
+SNMP operations are categorized into two types:
+
+GET: SNMP managers can request specific information from managed devices by sending GET requests. The agent responds with the requested data.
+SET: SNMP managers can modify the configuration of managed devices by sending SET requests. Agents make changes based on the request.
+
+SNMP Traps/Inform Requests:
+-----------------------------
+SNMP agents can send unsolicited notifications called SNMP traps (in SNMPv1 and SNMPv2c) or inform requests (in SNMPv3) to SNMP managers. 
+These notifications are typically used to inform managers about specific events or issues on the network.
+
+Security in SNMPv3:
+-----------------------------
+SNMPv3 offers improved security features compared to SNMPv1 and SNMPv2c. It includes authentication and encryption options to secure 
+the communication between agents and managers. This is important for protecting sensitive information on the network.
+
+
+
+MIB VS SNMP Traps
+-----------------------------------------------------------------------------------------------------------------------
+
+MIB (Management Information Base):
+-----------------------------------------------------------
+
+Definition: MIB is a database or structure that describes the managed objects on a network device. It defines the structure
+            and organization of the data that can be accessed and managed through SNMP. MIB objects are identified by Object 
+            Identifiers (OIDs), and they represent various parameters and attributes of network devices.
+
+Purpose: MIB serves as a repository of information that SNMP managers can query (GET) to retrieve data from network devices 
+         or use to configure (SET) those devices. It is the foundation for SNMP communication and allows for standardized and 
+         organized access to device information.
+
+Use Case: When you want to retrieve information from a network device or configure specific parameters, you use MIB objects. 
+          For example, you can use MIB objects to check the CPU utilization of a router or set the community string for SNMP access.
+
+
+SNMP Traps:
+-----------------------------------------------------------
+Definition: SNMP traps are unsolicited notifications sent by SNMP agents (network devices) to SNMP managers (network monitoring systems)
+            to inform them about specific events, issues, or alarms. Traps are typically triggered by predefined conditions, such as a 
+            link going down, high CPU usage, or an interface error.
+
+Purpose: SNMP traps are used for real-time event notification. When a specific condition occurs on a network device, the SNMP agent sends
+         a trap to the SNMP manager to alert it to the situation. Traps provide a way for devices to proactively report issues without being 
+         explicitly queried by the manager.
+
+Use Case: SNMP traps are valuable for network monitoring, as they allow network administrators to receive immediate notifications about 
+          network problems, outages, or performance issues. For example, if a critical server goes offline, the server's SNMP agent can 
+          send a trap to the SNMP manager, enabling rapid response to the issue.
+
+summary
+-----------------------------------------------------------
+In summary, MIB is primarily about structured data retrieval and device configuration, allowing SNMP managers to query and set values on 
+network devices. On the other hand, SNMP traps are about event notification and alerting, enabling SNMP agents to inform SNMP managers 
+about specific events or issues as they happen. Both MIB and traps are vital components of SNMP and are used together to effectively monitor 
+and manage network devices.
+
+
+
+
+
+

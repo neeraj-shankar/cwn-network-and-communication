@@ -1,0 +1,6 @@
+Commiting changes in a docker container to the docker image
+---------------------------------------------------------------------------------------------------
+docker commit -m "What you did to the image" -a "Author Name" container_id repository/new_image_name
+
+docker commit -m "added Node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
+
